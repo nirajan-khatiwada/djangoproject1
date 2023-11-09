@@ -1,0 +1,37 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block cssfile%}
+<link rel="stylesheet" href="{%static 'blog/css/all-post.css'%}">
+<link rel="stylesheet" href="{%static 'blog/css/post.css'%}">
+<link rel="stylesheet" href="{%static 'blog/css/index.css'%}">
+<link rel="stylesheet" href="{%static 'blog/css/post-detail.css'%}">
+{%endblock%}
+
+
+{%block title%}
+{{data.title}}
+{%endblock%}
+
+{%block content%}
+<section id="summary">
+    <h2>{{data.title}}</h2>
+    <article>
+      <img src="{{data.image.url}}" alt="Post Title" />
+      <address>By {{data.author}}</address>
+      <div>Last updated on <time>{{data.date}}</time></div>
+      <div>Tags:{%for x in tags%}{{x}}{%endfor%}</div>
+    </article>
+  </section>
+  
+  <main>
+    <p>
+    {{data.content}}
+    </p>
+    <p>
+      {{data.content}}
+    </p>
+    <p>
+      {{data.content}}
+    </p>
+  </main>
+{%endblock%}

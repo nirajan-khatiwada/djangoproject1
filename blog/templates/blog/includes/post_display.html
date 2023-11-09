@@ -1,0 +1,15 @@
+
+{%load static%}
+<li>
+    <article class="post">
+      <a href='{%url "postpage" slug=x.slug%}'>
+        <img src="{{x.image.url}}" alt="Mountain Hiking" />
+        <div class="post__content">
+          <h3>{{x.title}}</h3>
+          <p>
+           {{x.excerpt}}
+          </p>
+        </div>
+      </a>
+    </article>
+  </li>
